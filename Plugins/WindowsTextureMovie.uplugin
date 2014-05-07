@@ -1,0 +1,20 @@
+{
+    "PluginFileVersion" : 1,
+	
+	"FriendlyName" : "Windows TextureMovie Plugin",
+	"Version" : 1,
+	"VersionName" : "0.0.1",
+	"CreatedBy" : "Ehamloptiran",
+	"CreatedByURL" : "galaxyeham@gmail.com",
+	"EngineVersion" : 1579795,
+	"Description" : "Adds the ability to use videos as textures for windows only. Uses Media Foundation to playback. Supports WMV and AVI video codecs.",
+	"Category" : "Programming Rendering.Plugins",
+	
+    "Modules" :
+	[
+		{
+			"Name" : "WindowsTextureMovie",
+			"Type" : "Runtime"
+		}
+	]
+}
