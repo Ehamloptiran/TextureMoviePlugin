@@ -75,7 +75,7 @@ void UCodecMovieImf::ResetStream( )
 }
 
 /* Copies the next frame into the render target ready for viewing */
-void UCodecMovieImf::GetFrame( class FTextureMovieResource* InTextureMovieResource )
+void UCodecMovieImf::GetFrame(FRHICommandListImmediate& RHICmdList, class FTextureMovieResource* InTextureMovieResource)
 {
 	/* If only rendering one frame */
 	if( OneFrameOnly && FrameCount > 1 )

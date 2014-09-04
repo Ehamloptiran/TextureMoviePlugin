@@ -56,13 +56,10 @@ HRESULT FImfVideoPlayer::Invoke( IMFAsyncResult* AsyncResult )
 
 	MediaEventType EventType = MEUnknown;
 	HResult = Event->GetType( &EventType );
-	//Moving lower because it is referenced below to GetStatus if there was a problem: Event->Release( );
+	Event->Release( );
 
 	if( FAILED( HResult ) )
-	{
-		Event->Release( );
 		return S_OK;
-	}
 
 	/* Closed */
 	if( EventType == MESessionClosed )
@@ -74,10 +71,7 @@ HRESULT FImfVideoPlayer::Invoke( IMFAsyncResult* AsyncResult )
 	{
 		HResult = MediaSession->BeginGetEvent( this, NULL );
 		if( FAILED( HResult ) )
-		{
-			Event->Release( );
 			return S_OK;
-		}
 
 		if( MovieIsRunning( ) )
 		{
@@ -86,6 +80,7 @@ HRESULT FImfVideoPlayer::Invoke( IMFAsyncResult* AsyncResult )
 			{
 				if( Looping )
 					StartPlayback( );
+
 				else
 					MovieIsFinished.Set( 1 );
 			}
@@ -107,8 +102,6 @@ HRESULT FImfVideoPlayer::Invoke( IMFAsyncResult* AsyncResult )
 		/* DEBUG: Displays all event ID's in log */
 		//UE_LOG( LogImfVideoPlayer, Log, TEXT( "ImfVideoPlayer event id: %i" ), EventType );
 	}
-	
-	Event->Release( );
 
 	return S_OK;
 }

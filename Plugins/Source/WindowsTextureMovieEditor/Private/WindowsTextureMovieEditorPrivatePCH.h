@@ -3,6 +3,8 @@
 #include "CoreUObject.h"
 #include "Engine.h"
 
+#include "UnrealEd.h"
+
 #include "IWindowsTextureMovie.h"
 
 #include "ImfVideoPlayer.h"
@@ -10,3 +12,5 @@
 #include "CodecMovieWmv.h"
 #include "CodecMovieMp4.h"
 #include "CodecMovieAvi.h"
+
+#include "TextureMovieFactory.h"
