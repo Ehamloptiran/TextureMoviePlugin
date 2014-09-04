@@ -1,9 +1,9 @@
 {
-    "PluginFileVersion" : 1,
+    "PluginFileVersion" : 3,
 	
 	"FriendlyName" : "Windows TextureMovie Plugin",
 	"Version" : 1,
-	"VersionName" : "0.0.1",
+	"VersionName" : "0.1.0",
 	"CreatedBy" : "Ehamloptiran",
 	"CreatedByURL" : "galaxyeham@gmail.com",
 	"EngineVersion" : 1579795,
@@ -14,7 +14,12 @@
 	[
 		{
 			"Name" : "WindowsTextureMovie",
-			"Type" : "Runtime"
+			"Type" : "Runtime",
+			"LoadingPhase" : "PreDefault"
+		},
+		{
+			"Name" : "WindowsTextureMovieEditor",
+			"Type" : "Editor"
 		}
 	]
 }
